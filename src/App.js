@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes,Navigate } from "react-router-dom";
+import React,{useState} from "react"
+import Home from "./View/client/home/Home";
+import Layout from "./View/client/layout/Layout";
+import LayoutAdmin from "./View/admin/Layout/LayoutAdmin";
+import HomeAdmin from "./View/admin/Home/HomeAdmin";
+import Login from "./View/auth/Login";
+import Register from "./View/auth/Register";
+import Error from "./components/Error/Error";
+
 
 function App() {
+  const [admin, setAdmin] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Routes>
+      <Route path="/:local" element={<Layout/>}>
+          <Route index  element={<Home/>} />
+          
+      </Route>
+      <Route path='*' element={<Navigate to='/en/'/>}/>
+      <Route path='/' element={<Navigate to='/en/'/>}/>
+      <Route path='/:local'>
+            <Route path="auth/login" element={<Login/>}/>
+            <Route path="auth/register" element={<Register/>}/>
+      </Route>
+      {admin && 
+      <Route path="/admin" element={<LayoutAdmin/>}>
+          <Route path="/admin/" element={<HomeAdmin/>}/>
+      </Route>
+      }
+    </Routes>
+    </>
   );
 }
 
