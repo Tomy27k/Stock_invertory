@@ -22,7 +22,10 @@ i18n
           header:{
             home:'Ana Sayfa',
             contact:'İletişim',
-            about:'Hakkımızda'
+            about:'Hakkımızda',
+            login:'Giriş',
+            register:'Kayıt Ol',
+            profile:'Profil',
           },
         }
       },
@@ -32,7 +35,9 @@ i18n
           home: 'Home',
           contact:'Contact',
           about:'About',
-
+          login:'Login',
+          register:'Register',
+          profile:'Profile',
           }
           // here we will place our translations...
         }

@@ -1,18 +1,29 @@
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
-
-}
 header{
-   height: 60px;
-    background-color: #666;
-    position:sticky;
-    left: 50%;
-    
+   height: 80px;
+    background-color: $clr-4;
+    color: $clr-1;
+    a{
+        padding: 10px 20px;
+        color: $clr-1;
+        border: 2px solid transparent;
+        margin: 0 5px;
+        font-weight: 600;
+    &:hover {
+        transition: all 0.3s;
+        border: 2px solid $clr-2;
+        border-radius: 10px;
+        color: $clr-2;
+    }
+   
+    }
+    .active {
+        transition: all 0.3s;
+        border: 2px solid $clr-2;
+        border-radius: 10px;
+        color: $clr-2;
+    }
 }
 main{
-    margin-top: 60px;
+    min-height:100vh ;
+    background-color:$clr-4;
 }

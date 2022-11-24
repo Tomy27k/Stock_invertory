@@ -7,6 +7,8 @@ import HomeAdmin from "./View/admin/Home/HomeAdmin";
 import Login from "./View/auth/Login";
 import Register from "./View/auth/Register";
 import Error from "./components/Error/Error";
+import About from "./View/client/about/About";
+import Contact from "./View/client/contact/Contact";
 
 
 function App() {
@@ -16,7 +18,8 @@ function App() {
     <Routes>
       <Route path="/:local" element={<Layout/>}>
           <Route index  element={<Home/>} />
-          
+          <Route path="about" element={<About/>}/>
+          <Route path="contact" element={<Contact/>}/>
       </Route>
       <Route path='*' element={<Navigate to='/en/'/>}/>
       <Route path='/' element={<Navigate to='/en/'/>}/>

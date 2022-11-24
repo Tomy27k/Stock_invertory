@@ -1,0 +1,28 @@
+.home-slider{
+    width: 100vw;
+    max-height: calc(100vh - 80px);
+    overflow: hidden;
+    .splide{
+        height: 100%;
+    }
+    img{
+        min-width: 100%;
+    }
+    ul{
+        li{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           overflow: hidden;
+        }
+    }
+    .splide__arrows{
+        display: none;
+    }
+    
+}
+.card-photo{
+    .card-photo-item{
+        height: 300px;
+    }
+}

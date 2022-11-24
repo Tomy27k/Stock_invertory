@@ -1,13 +1,14 @@
 import React,{useEffect,useState} from 'react'
 import { NavLink ,useParams} from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
+import logo from '../../../assets/images/Logo-stock.png'
 
 const lngs = {
   en: { nativeName: 'English' },
   tr: { nativeName: 'Turkish' }
 };
 const Header = () => {
-  const [isLogin, setIsLogin]=useState(true)
+  const [isLogin, setIsLogin]=useState(false)
   const { t,i18n } = useTranslation();
   const {local} = useParams()
   useEffect(() => {
@@ -15,22 +16,24 @@ const Header = () => {
   },[])
 
   return (
-    <header className='d-flex container        justify-content-between align-items-center'>
-      <div className="logo">Logo</div>
+    <header className=''>
+      <div className="container d-flex  justify-content-between align-items-center">
+      <div className="logo"><img src={logo} alt="" height='80px'/></div>
       <nav>
           <ul className='d-flex p-0 m-0'>
-            <li><NavLink className='btn'>{t('header.home')}</NavLink></li>
-            <li><NavLink className='btn'>{t('header.about')}</NavLink></li>
-            <li><NavLink className='btn'>{t('header.contact')}</NavLink></li>
+            <li><NavLink to={`/${local}/`} >{t('header.home')}</NavLink></li>
+            <li><NavLink to={`/${local}/about`} >{t('header.about')}</NavLink></li>
+            <li><NavLink to={`/${local}/contact`} >{t('header.contact')}</NavLink></li>
           </ul>          
       </nav>
       <div className="auth">
-        {isLogin ? <NavLink to={`/${local}/profile_id`}>Profile</NavLink> 
+        {isLogin ? <NavLink to={`/${local}/profile/profile_id`}>Profile</NavLink> 
         :
-        (<div><NavLink>Register</NavLink><NavLink>Login</NavLink></div>)
+        (<div><NavLink to={`/${local}/auth/register`}>{t('header.register')}</NavLink><NavLink to={`/${local}/auth/login`}>{t('header.login')}</NavLink></div>)
         
 
         }
+      </div>
       </div>
     </header>
   )
