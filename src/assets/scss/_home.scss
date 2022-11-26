@@ -21,8 +21,59 @@
     }
     
 }
+
 .card-photo{
     .card-photo-item{
         height: 300px;
     }
+}
+.customers-opinion{
+    min-height: 500px;
+    width:100vw ;
+    background: center no-repeat;
+    background-size: cover;
+    position: relative;
+    .container{
+        position: relative;
+       
+    }
+    
+    .customer-item{
+        height: 300px;
+        min-width: 270px;
+        width: 25%;
+        position: relative;
+        z-index: 4443;
+        &:after{
+            content: url('');
+            position: absolute;
+            left: -10%;
+            top:-10%;
+            right: -10%;
+            bottom: -10%;
+            background-color: rgba(17, 17, 17, 0.692);
+            z-index: 100;
+            filter:blur(30px);
+        }
+        .circle{
+            width: 100px;
+            height: 100px;
+            
+           font-weight: 800;
+           font-size: 30px;
+        }
+        span{
+            background-color: $clr-4;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 20px;
+            font-weight: 600;
+            border: 2px solid transparent;
+            &:hover{
+                border: 2px solid $clr-1;
+                transition: all .3s;
+            }
+        }
+    }
+    
 }

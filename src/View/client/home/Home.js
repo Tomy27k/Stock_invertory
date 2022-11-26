@@ -80,8 +80,26 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section style={{backgroundImage:`url(${home_1})`,minHeight:'500px'}}>
-
+      <section className="customers-opinion d-flex align-items-center" style={{backgroundImage:`url(${home_1})`}}>
+      <div className="container d-flex flex-wrap justify-content-center align-items-center">
+        <div className="customer-item col-lg-3 col-sm-12 d-flex flex-column align-items-center justify-content-evenly ">
+          <div className=" circle d-flex justify-content-center align-items-center bg-warning rounded-circle">288</div>
+          <span>Happy Customers</span>
+        </div>
+        <div className="customer-item col-lg-3 col-sm-12 d-flex flex-column align-items-center justify-content-evenly ">
+          <div className="circle d-flex justify-content-center align-items-center bg-warning rounded-circle">158</div>
+          <span>Project Compeled</span>
+        </div>
+        <div className="customer-item col-lg-3 col-sm-12 d-flex flex-column align-items-center justify-content-evenly ">
+          <div className="circle d-flex justify-content-center align-items-center bg-warning rounded-circle">98</div>
+          <span>Cups of Coffee</span>
+        </div>
+        <div className="customer-item col-lg-3 col-sm-12 d-flex flex-column align-items-center justify-content-evenly ">
+          <div className="circle d-flex justify-content-center align-items-center bg-warning rounded-circle">34</div>
+          <span>Awards</span>
+        </div>
+       
+      </div>
       </section>
     </>
   );
