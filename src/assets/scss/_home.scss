@@ -47,13 +47,17 @@
         &:after{
             content: url('');
             position: absolute;
-            left: -10%;
-            top:-10%;
-            right: -10%;
-            bottom: -10%;
+            left: 0;
+            top:0;
+            right: 0;
+            bottom: 0;
             background-color: rgba(17, 17, 17, 0.692);
             z-index: 100;
             filter:blur(30px);
+        }
+        & > *{
+            position: relative;
+            z-index: 102;
         }
         .circle{
             width: 100px;

@@ -98,7 +98,6 @@ const Home = () => {
           <div className="circle d-flex justify-content-center align-items-center bg-warning rounded-circle">34</div>
           <span>Awards</span>
         </div>
-       
       </div>
       </section>
     </>
