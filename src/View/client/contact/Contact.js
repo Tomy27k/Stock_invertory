@@ -31,30 +31,6 @@ const Contact = () => {
       style={{ backgroundImage: `url(${bgimage})` }}
     >
       <div className="container d-flex flex-wrap  ">
-        <div className="contact-info d-flex flex-column col-sm-12 col-lg-6">
-          <h3>Contact Us</h3>
-          <div className="icon my-3">
-            <h3>
-              <AiFillPhone className="me-3" />
-              Call Us
-            </h3>
-            <a className="text-success " href={`tel:${phone}`}>{phone}</a>
-          </div>
-          <div className="icon my-3">
-            <h3>
-              <MdLocationOn className="me-3" />
-              Location
-            </h3>
-            <span> 121 rocket Street,21 Avenue, New York NY 92103-3232</span>
-          </div>
-          <div className="icon my-3">
-            <h3>
-              <AiFillClockCircle className="me-3" />
-              Business Hours
-            </h3>
-            <span> Mon-fri.. 10 a.m - 8 p.m,Sun... Closed</span>
-          </div>
-        </div>
         <div className="form col-sm-12 col-lg-6">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="row">

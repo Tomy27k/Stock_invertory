@@ -3,13 +3,15 @@
     min-height: 100vh;
     position: relative;
     z-index: 5;
+    background: center no-repeat;
+    background-size: cover;
     .container{
         position: relative;
         z-index: 6;
         color: $clr-4;
    
     &:after{
-        content: url('');
+        content: '';
         position: absolute;
         left: -10%;
         top:-10%;
