@@ -1,5 +1,5 @@
 import { Route, Routes,Navigate } from "react-router-dom";
-import React,{useState} from "react"
+import React,{useState,useEffect} from "react"
 import Home from "./View/client/home/Home";
 import Layout from "./View/client/layout/Layout";
 import LayoutAdmin from "./View/admin/Layout/LayoutAdmin";
@@ -9,10 +9,12 @@ import Register from "./View/auth/Register";
 import Error from "./components/Error/Error";
 import About from "./View/client/about/About";
 import Contact from "./View/client/contact/Contact";
-
+import {useSelector} from 'react-redux'
 
 function App() {
-  const [admin, setAdmin] = useState(true);
+  const login=  useSelector((state)=>state.authLogin.login);
+  const admin=  useSelector((state)=>state.authLogin.admin);
+  
   return (
     <>
     <Routes>
@@ -23,10 +25,11 @@ function App() {
       </Route>
       <Route path='*' element={<Navigate to='/en/'/>}/>
       <Route path='/' element={<Navigate to='/en/'/>}/>
+      {!login && 
       <Route path='/:local'>
             <Route path="auth/login" element={<Login/>}/>
             <Route path="auth/register" element={<Register/>}/>
-      </Route>
+      </Route>}
       {admin && 
       <Route path="/admin" element={<LayoutAdmin/>}>
           <Route path="/admin/" element={<HomeAdmin/>}/>
