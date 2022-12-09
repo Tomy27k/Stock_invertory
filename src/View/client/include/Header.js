@@ -14,7 +14,7 @@ const Header = () => {
   const {local} = useParams();
   useEffect(() => {
     i18n.changeLanguage(local);
-    console.log(admin)
+    console.log(admin);
   },[])
 
   return (
@@ -29,10 +29,10 @@ const Header = () => {
             <li><NavLink to={`/${local}/contact`} >{t('header.contact')}</NavLink></li>
           </ul>          
       </nav>
-      <div className="auth">
+      <div className="auth d-flex gap-3">
         {login ? <NavLink to={`/${local}/profile/profile_id`}>Profile</NavLink> 
         :
-        (<div><NavLink to={`/${local}/auth/register`}>{t('header.register')}</NavLink><NavLink to={`/${local}/auth/login`}>{t('header.login')}</NavLink></div>)
+        (<div className='d-flex align-items'><NavLink to={`/${local}/auth/register`}>{t('header.register')}</NavLink><NavLink to={`/${local}/auth/login`}>{t('header.login')}</NavLink></div>)
         
 
         }
